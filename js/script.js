@@ -122,7 +122,9 @@ var TrashModel = function(_lable, _cell, remarks) {
 
   this.getDateLabel = function() {
     if (this.mostRecent === undefined) {
-	return this.getRemark() + "不明上";
+	  /** return this.getRemark() + "不明上"; */
+	return "";
+    
     }
       var result_text = this.mostRecent.getFullYear() + "/" + (1 + this.mostRecent.getMonth()) + "/" + this.mostRecent.getDate() + ' (' + day_enum[this.mostRecent.getDay()] + ')';
     return this.getRemark() + this.dayLabel + " " + result_text;
