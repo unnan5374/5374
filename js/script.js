@@ -123,7 +123,7 @@ var TrashModel = function(_lable, _cell, remarks) {
   this.getDateLabel = function() {
     if (this.mostRecent === undefined) {
 	  /** return this.getRemark() + "不明上"; */
-	return "";
+	return "スキップ";
     
     }
       var result_text = this.mostRecent.getFullYear() + "/" + (1 + this.mostRecent.getMonth()) + "/" + this.mostRecent.getDate() + ' (' + day_enum[this.mostRecent.getDay()] + ')';
@@ -587,6 +587,10 @@ $(function() {
               leftDayText = leftDay + "日後";
             }
 	  }
+		 // if文追加
+		 if (dateLabel === "スキップ") {
+
+		 } else {
 
           styleHTML += '#accordion-group' + d_no + '{background-color:  ' + description.background + ';} ';
 
@@ -611,6 +615,9 @@ $(function() {
             '<div class="targetDays"></div></div>' +
             "</div>" +
             "</div>";
+
+      }
+
       }
     }
 
